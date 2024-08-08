@@ -10,7 +10,23 @@ class Solution:
         for num in nums:
             h[num]+=1
 
-        print(h)
+        hr = {}
+        for i in h.values():
+            value = i
+            key = list(h.keys())[list(h.values()).index(i)]
+            hr[value] = key
+        ret = []
 
+        i = k
+        m = list(hr.keys()) 
+        reversed(m)
+        z = m[0]
+    
+        while z>=k:
+            ret.append(hr[z])
 
-print(Solution().topKFrequent([1,1,1,2,2,3],2))
+            z-=1
+        
+        return ret
+
+print(Solution().topKFrequent([-1,-1],1))
